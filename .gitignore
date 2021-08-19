@@ -2,3 +2,5 @@
 *.h5
 *.mnc
 .ipynb_checkpoints
+*.gif
+*__pycache__
