@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from pymerlin.recon import *
+from pymerlin.trajectory import *
 from mpl_toolkits.mplot3d import Axes3D
 from scipy.spatial import SphericalVoronoi, geometric_slerp
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
