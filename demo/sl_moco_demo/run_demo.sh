@@ -28,7 +28,7 @@ function run_moco() {
     fov=230
     ds=3
     step=1000
-    options="--nspokes $nspokes --its $cgit --step $step --fov $fov --ds $ds --gap 3"
+    options="--nspokes $nspokes --its $cgit --step $step --fov $fov --ds $ds"
     options="${options} --batchitk 10 --batchries 10  --threaditk 2 --threadries 2"
 
     run_merlin_sw -i $1.h5 ${options} --out ${1}_mocodir -v
@@ -36,11 +36,11 @@ function run_moco() {
 # run_moco moving_phantom
 
 # 5. Reconstruct data with and without motion correction
-riesling recon --mag --sdc=pipe static_phantom.h5 -v
-riesling recon --mag --sdc=pipe moving_phantom.h5 -v
-riesling recon --mag --sdc=pipe moving_phantom_mocodir/moving_phantom_moco.h5 -v
+riesling cg --mag --fast-grid -i 4 --kb --os=1.3 --sdc=pipe static_phantom.h5 -v
+riesling cg --mag --fast-grid -i 4 --kb --os=1.3 --sdc=pipe moving_phantom.h5 -v
+riesling cg --mag --fast-grid -i 4 --kb --os=1.3 --sdc=pipe moving_phantom_mocodir/moving_phantom_moco.h5 -v
 
 # 6. Show results
 python3 difference_plot.py
 pymerlin report --reg moving_phantom_mocodir/all_reg_param.p
-pymerlin gif --reg moving_phantom_mocodir/all_reg_param.p --nav moving_phantom_mocodir/navigators --axis y
+pymerlin animation --reg moving_phantom_mocodir/all_reg_param.p --nav moving_phantom_mocodir/navigators --out reg_animation.gif

@@ -45,7 +45,7 @@ def main():
     # Apply rotation to trajectory
     print("Applying rotation")
     move_trajp = rot_traj(move_trajp, 42000, 48000, [0, -10, 0])
-    move_trajp = rot_traj(move_trajp, 52000, 58000, [10, 0, 0])
+    move_trajp = rot_traj(move_trajp, 52000, 58000, [0, 0, 10])
 
     # Save data
     print("Saving data to moving_phantom.h5")

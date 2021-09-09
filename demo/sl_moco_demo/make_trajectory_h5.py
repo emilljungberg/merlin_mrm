@@ -1,7 +1,7 @@
 
 import h5py
 import numpy as np
-from pymerlin.trajectory import linear_phyllotaxis, wong_roos_traj
+from pymerlin.trajectory import *
 
 
 def create_info(matrix, voxel_size, read_points, read_gap, spokes_hi, spokes_lo, lo_scale,
