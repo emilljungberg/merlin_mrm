@@ -4,3 +4,4 @@
 .ipynb_checkpoints
 *.gif
 *__pycache__
+demo/sl_moco_demo/moving_phantom_mocodir/*
