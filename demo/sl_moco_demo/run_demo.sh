@@ -7,10 +7,10 @@ function make_traj() {
     fi
     python3 make_trajectory_h5.py
 }
-# make_traj
+make_traj
 
 # 2. Create phantom k-space data based on the generated trajectory
-# riesling phantom --traj trajectory.h5 --info trajectory.h5 --shepp_logan -v static_phantom.h5
+riesling phantom --traj trajectory.h5 --info trajectory.h5 --shepp_logan -v static_phantom.h5
 
 # 3. Now we apply motion to the phantom in k-space
 function apply_motion() {
@@ -19,7 +19,7 @@ function apply_motion() {
     fi
     python3 apply_motion.py
 }
-# apply_motion
+apply_motion
 
 # 4. Now we run motion correction
 function run_moco() {
@@ -33,7 +33,7 @@ function run_moco() {
 
     run_merlin_sw -i $1.h5 ${options} --out ${1}_mocodir -v
 }
-# run_moco moving_phantom
+run_moco moving_phantom
 
 # 5. Reconstruct data with and without motion correction
 riesling cg --mag --fast-grid -i 4 --kb --os=1.3 --sdc=pipe static_phantom.h5 -v
