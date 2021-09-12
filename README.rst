@@ -1,4 +1,4 @@
-Motion Insensitive Silent Neuroimaging with MERLIN
+Motion Corrected Silent Neuroimaging with MERLIN
 =======================================================
 Code to accompany paper on MERLIN recently submitted.
 
