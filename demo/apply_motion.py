@@ -30,6 +30,7 @@ def main():
     print("Opening moving_phantom.h5")
     move_h5 = h5py.File('moving_phantom.h5', 'w')
     ref_h5.copy('info', move_h5)
+    ref_h5.copy('echoes', move_h5)
     ref_h5.close()
 
     move_trajp = np.copy(ref_traj)
