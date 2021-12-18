@@ -1,4 +1,4 @@
-Motion Corrected Silent Neuroimaging with MERLIN
+Motion Corrected Silent ZTE Neuroimaging
 =======================================================
 Code to accompany paper on MERLIN recently submitted.
 
@@ -10,7 +10,7 @@ Dependencies
 --------------------
 
 1. `pymerlin <https://github.com/emilljungberg/pyMERLIN>`_ 
-2. `riesling <https://github.com/spinicist/riesling>`_ (Tested with version X)
+2. `riesling <https://github.com/spinicist/riesling>`_
 
 Python packages required
 
